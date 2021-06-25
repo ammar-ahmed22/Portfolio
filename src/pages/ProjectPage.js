@@ -10,6 +10,9 @@ import wb from '../assets/imgs/wbmockup.png';
 import reno from '../assets/imgs/undraw_under_construction_46pa.svg';
 import flow from '../assets/imgs/flowmodorov3.png';
 import wbdesign from '../assets/imgs/wbdesign.png';
+import excel from '../assets/imgs/excel.png';
+import before from '../assets/imgs/BeforeReno.png';
+import after from '../assets/imgs/AfterReno.png';
 
 const images = [
     {
@@ -27,6 +30,18 @@ const images = [
     {
         name: 'flowmodoro',
         image: flow
+    },
+    {
+        name: 'home-renovation-before',
+        image: before
+    },
+    {
+        name: "home-renovation-after",
+        image: after
+    },
+    {
+        name: "home-renovation-excel",
+        image: excel
     }
 ]
 
@@ -142,6 +157,22 @@ const ProjectPage = ({match, darkMode, setDarkMode}) =>{
                         }else if (item.type === 'button'){
                             return (
                                 <a href={item.link} target="_blank" className="project-btn text-decoration-none fw-light shadow-dark-sm my-4 rounded rounded-pill">{item.text} <i class='bx bxs-right-arrow-alt link-arrow'></i></a>
+                            )
+                        }else if (item.type === 'subtitle'){
+                            return (
+                                <h3 className="text-light my-3 fw-bold fs-3">{item.text}</h3>
+                            )
+                        }else if (item.type === 'ordered-list'){
+                            return (
+                                <ol className="text-light fs-5">
+                                    {
+                                        item.text.map(listItem => {
+                                            return (
+                                                <li>{listItem}</li>
+                                            )
+                                        })
+                                    }
+                                </ol>
                             )
                         }
                     })
