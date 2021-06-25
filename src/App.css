@@ -1,0 +1,421 @@
+/* Root Styles */
+:root{
+  --darkbg: #292D32;
+  --darkbgalt: #30343A;
+  --lightbgalt: #dadfe3;
+  --lightbg: #ECF0F3;
+  --blue: #3E87F0;
+}
+
+.page-body{
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+/* Template Styles */
+
+.bg-dark{
+  background-color: var(--darkbg) !important;
+}
+
+.bg-light{
+  background-color: var(--lightbg) !important;
+}
+
+.bg-dark-inv{
+  background-color: var(--darkbg);
+}
+
+.bg-light-inv{
+  background-color: var(--lightbg);
+}
+
+.text-dark-inv{
+  color: var(--darkbg);
+}
+
+.text-light-inv{
+  color: var(--lightbg);
+}
+
+.shadow-dark{
+  box-shadow: 18px 18px 20px #24262B, -18px -18px 20px #30343A;
+}
+
+.shadow-light{
+  box-shadow: 18px 18px 20px #D1D9E6, -18px -18px 20px #FFFFFF;
+}
+
+.shadow-dark-sm{
+  box-shadow: 4px 4px 10px #24262B, -4px -4px 10px #30343A;
+}
+
+.shadow-light-sm{
+  box-shadow: 4px 4px 10px #D1D9E6, -4px -4px 10px #FFFFFF;
+}
+
+.active-dark a{
+  border-bottom: 2px solid var(--darkbg);
+  
+}
+
+.active-light a{
+  border-bottom: 2px solid var(--lightbg);
+}
+
+.border-side-light{
+  border-left: 5px solid var(--lightbg);
+}
+
+.border-side-dark{
+  border-left: 5px solid var(--darkbg);
+}
+
+.img{
+  /* width: 30vw; */
+  border-radius: 35px;
+}
+
+strong{
+  color: #3E87F0 !important;
+}
+
+/* Nav Styles */
+.logo{
+  height: 4rem;
+}
+
+
+
+.nav-list{
+  list-style-type: none;
+  
+}
+
+.nav-list li:hover a{
+  font-weight: 900;
+  
+}
+
+.nav-list li:hover .nav-sublist{
+  display: block;
+}
+
+.bxs-chevron-down{
+  position: relative;
+  top: 2px;
+}
+
+.nav-sublist{
+  position: absolute;
+  list-style-type: none;
+  display: none;
+}
+
+.nav-sublist li:hover a{
+  border-bottom: 2px solid var(--darkbg);
+}
+
+.nav-sublist li{
+  padding: 0;
+}
+
+/* Main Styles */
+.main{
+  margin-top: 15vh;
+  height: 90vh;
+}
+
+.scroll-btn{
+  background: var(--blue);
+  width: 125px;
+  border-radius: 30px;
+  padding: 10px;
+  color: var(--lightbg);
+}
+
+.scroll-btn:hover{
+  box-shadow: none;
+  color: var(--lightbg);
+  font-weight: 800 !important;
+}
+
+/* Toggle Styles */
+.toggle{
+  --width: 60px;
+  --height: calc(var(--width) / 2);
+  --border-radius: calc(var(--height) / 2);
+
+  display: inline-block;
+  cursor: pointer;
+}
+
+.toggle-input{
+  display: none;
+}
+
+.toggle-fill{
+  position: relative;
+  width: var(--width);
+  height: var(--height);
+  border-radius: var(--border-radius);
+  background: #3E87F0;
+  transition: background .2s;
+}
+
+.toggle-input:checked ~ .toggle-fill{
+  background: #ddd;
+}
+
+.toggle-fill:after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: var(--height);
+  width: var(--height);
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,.25);
+  border-radius: var(--border-radius);
+  transition: transform .2s;
+}
+
+.toggle-input:checked ~ .toggle-fill:after{
+  transform: translateX(var(--height));
+}
+
+.toggle-cont{
+  /* display: flex;
+  align-items: center;
+  position: absolute;
+  right: 1rem;
+  top: 1rem; */
+}
+
+.darkmode-icons{
+  margin: 1rem;
+  font-size: 1rem;
+  color: #ddd;
+}
+
+.activeDark{
+  color: #3E87F0;
+}
+
+/* Projects Styles */
+.project-card{
+  border-radius: 20px;
+  position: relative;
+  height: 30vh;
+  /* width: 25vw; */
+}
+
+@keyframes slide-right{
+  0%{
+      right: 100%;
+      opacity: 0;
+  }
+  100%{
+      right: 80%;
+      opacity: 1;
+  }
+}
+
+@keyframes slide-left {
+  0%{
+      left: 100%;
+      opacity: 0;
+  }
+  100%{
+      left: 80%;
+      opacity: 1;
+  }
+}
+
+.project-card:hover{
+  height: 35vh;
+  width: 30vw;
+  transition: all .35s ease-in-out;
+  cursor: pointer;
+}
+
+.project-card:hover .project-desc{
+  display: block;
+  animation: slide-right 1s ease-in-out;
+  transition: all 1s ease-in-out;
+  
+}
+
+.project-card:hover #reno-id{
+  display: block;
+  transition: all 1s ease-in-out;
+  animation: slide-left 1s ease-in-out;
+  
+}
+
+
+
+.project-desc{
+  position: absolute;
+  right: 80%;
+  top: 60%;
+  border-radius: .5rem;
+  
+  display: none;
+}
+
+#reno-id{
+  position: absolute;
+  left: 80%;
+  top: 60%;
+  border-radius: .5rem;
+  display: none;
+}
+
+
+
+#wb-proj{
+  background-color: #DADBB9;
+}
+
+#reno-proj{
+  background-color: #A0D6F4;
+}
+
+#flow-proj{
+  background-color: #3C4A6D;
+}
+
+/* Footer */
+.footer{
+  background-color: #323538;
+  height: 10vh;
+}
+
+/* Project Page */
+.projectpage-card{
+  border-radius: 2rem;
+}
+
+.project-title{
+  font-family: "Benne", sans-serif;
+}
+
+.project-nav-cont{
+  position: sticky;
+  bottom: 60%;
+  margin-left: 5%;
+  transform: translate(0, 20%);
+}
+
+.project-nav{
+  list-style-type: none;
+}
+
+.project-btn{
+  background-color: var(--blue);
+  color: var(--lightbg);
+  padding: .5rem 1rem .5rem 1rem;
+  
+}
+
+.project-btn:hover{
+  box-shadow: none;
+  color: var(--lightbg);
+
+}
+
+.project-control{
+  width: 50%;
+}
+
+.link-arrow{
+  transform: rotate(-45deg);
+}
+
+.project-nav-menu{
+  display: none;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 768px){
+
+  .bg-dark-alt-xs{
+    background: var(--darkbgalt) !important;
+  }
+
+  .bg-light-alt-xs{
+    background: var(--lightbgalt) !important;
+  }
+  .project-nav-cont{
+    height: 100vh;
+    margin-left: 0;
+    position: absolute;
+    bottom: 0%;
+    right: 0;
+    transform: none;
+    border-radius: 2rem 0rem 0rem 2rem;
+    align-items: center;
+    transition: all 2s;
+  }
+
+  .project-nav{
+    border: none;
+    margin-left: -1rem;
+  }
+
+  .project-nav-buttons{
+    width: 100%;
+    justify-content: center;
+  }
+
+  .project-nav-link{
+    font-size: 2rem !important;
+  }
+
+  .project-nav-menu{
+    display: block;
+    z-index: 20;
+  }
+
+  .bx-plus{
+    transform: rotate(45deg);
+  }
+  
+  .project-desc{
+    display: block;
+    left: -5%;
+    top: 70%;
+    right: auto;
+  }
+
+  #reno-id{
+    display: block;
+    left: -5%;
+    top: 70%;
+    right: auto;
+  }
+
+  /* .projects{
+    margin-top: 30vh !important;
+  } */
+
+  .img{
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 610px){
+  .project-desc{
+    display: block;
+    left: 0;
+    top: 70%;
+    right: auto;
+  }
+
+  #reno-id{
+    display: block;
+    left: 0;
+    top: 70%;
+    right: auto;
+  }
+}
