@@ -46,7 +46,11 @@ const NavBar = ({name, darkMode, setDarkMode}) =>{
 
         const bgInvElems = document.querySelectorAll(`.bg-${isDark ? 'light' : 'dark'}-inv`);
         const textInvElems = document.querySelectorAll(`.text-${isDark ? 'dark': 'light'}-inv`);
+        
+        const bgAltXSElems = document.querySelectorAll(`.bg-${isDark? 'dark': 'light'}-alt-xs`);
 
+        console.log(bgAltXSElems);
+        
         const borderSideElems = document.querySelectorAll(`.border-side-${isDark ? 'light': 'dark'}`);
 
         const dmIcons = document.querySelectorAll('.darkmode-icons');
@@ -59,7 +63,7 @@ const NavBar = ({name, darkMode, setDarkMode}) =>{
         switchClasses(isDark, textInvElems, ['text-light-inv', 'text-dark-inv']);
         switchClasses(isDark, activeElems, ['active-light', 'active-dark'], false);
         switchClasses(isDark, borderSideElems, ['border-side-light', 'border-side-dark'], false);
-        
+        switchClasses(isDark, bgAltXSElems, ['bg-light-alt-xs', 'bg-dark-alt-xs']);
 
         if (isDark){
             dmIcons[0].classList.remove('activeDark');
